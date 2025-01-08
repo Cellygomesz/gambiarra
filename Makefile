@@ -6,7 +6,7 @@
 #    By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/13 17:12:05 by mgomes-s          #+#    #+#              #
-#    Updated: 2024/12/17 09:45:57 by mgomes-s         ###   ########.fr        #
+#    Updated: 2025/01/08 09:27:46 by mgomes-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME= fractol
 
 CC= cc
 
-CFLAGS= -Wall -Werror -Wextra
+CFLAGS= -Wall -Werror -Wextra -g
 
 LIBX= -lmlx_Linux -L./minilibx-linux -lXext -lX11 -lm ./minilibx-linux/libmlx.a
 

@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/06 10:32:43 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 10:02:01 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	iterate_julia(t_f *f, double zx, double zy, double c_re, double c_im)
 	double	tmp;
 
 	iter = 0;
+	tmp = 0;
 	while (zx * zx + zy * zy < 4 && iter < f->max_iter)
 	{
 		tmp = zx * zx - zy * zy + c_re;
@@ -48,12 +49,8 @@ static void	julia_set(t_f *f)
 	}
 }
 
-
-void	julia()
+void	julia(t_f *f)
 {
-	t_f	*f;
-
-	f = malloc(sizeof(t_f));
 	if (!f)
 		exit(1);
 	f->mlx = mlx_init();

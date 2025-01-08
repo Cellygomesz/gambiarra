@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/06 10:22:06 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 09:26:59 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	key_esc(int num, void *param);
 int	close_win(void *param);
 
 /*----- mandelbrot.c -----*/
-void	mandelbrot(void);
+void	mandelbrot(t_f *f);
 void	init_mandelbrot(t_f *f);
 
 /*----- julia.c -----*/

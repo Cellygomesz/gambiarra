@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/06 10:23:05 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 09:44:11 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	calculate_mandelbrot(t_f *f, int x, int y)
 	i = 0;
 	cm.zx = 0.0;
 	cm.zy = 0.0;
-	map_to_complex_plane(f, x, y);
+	cm = map_to_complex_plane(f, x, y);
 	while ((cm.zx * cm.zx + cm.zy * cm.zy <= 4.0) && (i < f->max_iter))
 	{
 		temp = cm.zx * cm.zx - cm.zy * cm.zy + cm.cx;
@@ -72,11 +72,10 @@ static void	draw_mandelbrot(t_f *f)
 
 // Precisa dar free ao fechar (mas: no valgrind não dá leak)
 
-void	mandelbrot(void)
-{
-	t_f	*f;
+#include <stdio.h>
 
-	f = malloc(sizeof(t_f));
+void	mandelbrot(t_f *f)
+{
 	f->mlx = mlx_init();
 	f->win = mlx_new_window(f->mlx, 950, 700, "Mandelbrot");
 	init_mandelbrot(f);

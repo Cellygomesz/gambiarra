@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:23 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 09:43:11 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:09:28 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,3 @@ int	close_win(void *param)
 	exit(0);
 	return (0);
 }
-
-/* void print(t_complex *complex)
-{
-	printf("VALOR CX: %f\nVALOR CY: %f\nVALOR ZX: %f\nVALOR ZY: %f\n", complex->cx, complex->cy, complex->zx, complex->zy);
-} */

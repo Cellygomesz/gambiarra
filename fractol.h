@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 09:26:59 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:07:28 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct s_f
 	int			max_iter;
 	double		c_re;
 	double		c_im;
+	double		form1;
+	double		form2;
 }	t_f;
 
 typedef struct s_complex
@@ -45,6 +47,8 @@ typedef struct s_complex
 	double		zy;
 	double		cx;
 	double		cy;
+	double		form1;
+	double		form2;
 }	t_complex;
 
 /*----- main.c -----*/

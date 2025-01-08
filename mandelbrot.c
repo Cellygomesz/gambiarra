@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 09:44:11 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:09:56 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_complex	map_to_complex_plane(t_f *f, int x, int y)
 
 	complex.cx = f->min_re + (x * (f->max_re - f->min_re) / 950);
 	complex.cy = f->min_im + (y * (f->max_im - f->min_im) / 700);
+	complex.form1 = f->form1;
+	complex.form2 = f->form2;
 	return (complex);
 }
 
@@ -69,10 +71,6 @@ static void	draw_mandelbrot(t_f *f)
 		y++;
 	}
 }
-
-// Precisa dar free ao fechar (mas: no valgrind não dá leak)
-
-#include <stdio.h>
 
 void	mandelbrot(t_f *f)
 {

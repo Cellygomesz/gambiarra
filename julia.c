@@ -6,26 +6,27 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 10:02:01 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:05:44 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	iterate_julia(t_f *f, double zx, double zy, double c_re, double c_im)
+int	iterate_julia(t_f *f, t_complex *c, double c_re, double c_im)
 {
 	int		iter;
 	double	tmp;
 
 	iter = 0;
 	tmp = 0;
-	while (zx * zx + zy * zy < 4 && iter < f->max_iter)
+	while (c->cx * c->cx + c->cy * c->cy <= 4 && iter < f->max_iter)
 	{
-		tmp = zx * zx - zy * zy + c_re;
-		zy = 2 * zx * zy + c_im;
-		zx = tmp;
+		tmp = c->cx * c->cx - c->cy * c->cy + c_re - c->form1;
+		c->cy = 2 * c->cx * c->cy + c_im + c->form2;
+		c->cx = tmp;
 		iter++;
 	}
+
 	return (iter);
 }
 
@@ -42,7 +43,7 @@ static void	julia_set(t_f *f)
 		while (x < 950)
 		{
 			complex = map_to_complex_plane(f, x, y);
-			color_pixel(f, x, y, iterate_julia(f, complex.cx, complex.cy, f->c_re, f->c_im));
+			color_pixel(f, x, y, 0x00001100 * iterate_julia(f, &complex ,f->c_re, f->c_im));
 			x++;
 		}
 		y++;

@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 14:07:28 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:34:40 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,25 @@ typedef struct s_complex
 }	t_complex;
 
 /*----- main.c -----*/
-int	main(int ac, char **av);
+int			main(int ac, char **av);
 
 /*----- aux.c -----*/
-int	ft_strcmp(const char *s1, const char *s2);
-int	mini_atoi(char nptr);
-int	key_esc(int num, void *param);
-int	close_win(void *param);
+int			ft_strcmp(const char *s1, const char *s2);
+int			mini_atoi(char nptr);
+int			key_esc(int num, void *param);
+int			close_win(void *param);
 
 /*----- mandelbrot.c -----*/
-void	mandelbrot(t_f *f);
-void	init_mandelbrot(t_f *f);
+void		mandelbrot(t_f *f);
+void		init_mandelbrot(t_f *f);
 
 /*----- julia.c -----*/
-void	julia();
-void	num_julia(t_f *f, int number);
-void	init_julia(t_f *f);
+void		julia(t_f *f);
+void		num_julia(t_f *f, int number);
+void		init_julia(t_f *f);
 
 /*----- julia and mandelbrot -----*/
 t_complex	map_to_complex_plane(t_f *f, int x, int y);
-void	color_pixel(t_f *f, int x, int y, int color);
+void		color_pixel(t_f *f, int x, int y, int color);
 
 #endif

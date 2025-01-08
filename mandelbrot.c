@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 14:09:56 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 15:04:54 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	calculate_mandelbrot(t_f *f, int x, int y)
 	}
 	if (i == f->max_iter)
 		return (0x000000);
-	return ((0x0e0ee8 / f->max_iter) * i);
+	return ((0x6b104b / f->max_iter) * i);
 }
 
 void	color_pixel(t_f *f, int x, int y, int color)

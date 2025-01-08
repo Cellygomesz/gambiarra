@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:09:21 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 09:52:02 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/08 14:56:03 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ static int	is_num(char str)
 	return (1);
 }
 
-#include <stdio.h>
-
 int	main(int ac, char **av)
 {
-    int num;
+	int	num;
 	t_f	f;
 
-    num = 0;
+	num = 0;
 	(void)ac;
 	if (av[0] && !av[1])
 		user_error();
@@ -44,7 +42,7 @@ int	main(int ac, char **av)
 	else if (ft_strcmp(av[1], "julia") == 0 && av[2] && is_num(av[2][0]) == 0)
 	{
 		num = mini_atoi(av[2][0]);
-        num_julia(&f, num);
+		num_julia(&f, num);
 		julia(&f);
 	}
 	else

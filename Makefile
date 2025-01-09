@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+         #
+#    By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+         +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/13 17:12:05 by mgomes-s          #+#    #+#              #
 #    Updated: 2025/01/08 09:27:46 by mgomes-s         ###   ########.fr        #
@@ -29,6 +29,9 @@ PURPLE= \033[1;35m
 RESET=\033[0m
 
 all: $(NAME)
+
+$(NAME): $(OBJ)
+	@ $(CC) $(CFLAGS) $(OBJ) $(LIBX) -o $(NAME)
 	@ echo "                                   "
 	@ echo "$(GREEN)✅ Build completed!$(RESET)"
 	@ echo "                                   "
@@ -45,21 +48,16 @@ all: $(NAME)
 	@ echo "|                                     |"
 	@ echo "_______________________________________"
 
-
-.c.o:
-	@ $(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
-
-fractol: $(OBJ)
-	@ $(CC) $(CFLAGS) $(OBJ) $(LIBX) -o fractol
+%.o: %.c
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@ rm -f $(OBJ)
+	rm -f $(OBJ)
 	@ echo "                                      "
 	@ echo "$(RED)🗑️  successfully deleted$(RESET)"
 	@ echo "                                      "
 
-
 fclean: clean
-	@ rm -f fractol
+	@ rm -f $(NAME)
 
 re: fclean all

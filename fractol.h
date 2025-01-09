@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 14:34:40 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/09 08:13:21 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "minilibx-linux/mlx.h"
-
-// Bits por pixel (para mlx_get_data_addr)
-// Comprimento de cada linha da imagem (em bytes)
-// Endianidade (0 = Little, 1 = Big)
 
 typedef struct s_f
 {

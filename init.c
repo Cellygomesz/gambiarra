@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 15:06:03 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:25:37 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	init_mandelbrot(t_f *f)
 	f->max_re = 1.0;
 	f->min_im = -1.5;
 	f->max_im = 1.5;
-	f->max_iter = 50;
+	f->max_iter =100;
+	f->interpolation = 1;
+	f->zoom_level = 1;
 	f->img = mlx_new_image(f->mlx, 950, 700);
 	f->img_addr = mlx_get_data_addr(f->img, &f->bpp, &f->line_len, &f->endian);
 }
@@ -31,7 +33,9 @@ void	init_julia(t_f *f)
 	f->max_re = 2.0;
 	f->min_im = -2.0;
 	f->max_im = 2.0;
-	f->max_iter = 50;
+	f->max_iter = 100;
+	f->interpolation = 1;
+	f->zoom_level = 1;
 	f->img = mlx_new_image(f->mlx, 950, 700);
 	f->img_addr = mlx_get_data_addr(f->img, &f->bpp, &f->line_len, &f->endian);
 }

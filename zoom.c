@@ -6,34 +6,46 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 08:21:56 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/09 08:56:51 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:30:09 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+void	render_fractal(t_f *f)
+{
+	if (f->type == 1)
+	{
+		draw_mandelbrot(f);
+	}
+	else if (f->type == 0)
+	{
+		julia_set(f);
+	}
+}
+
 void	zoom(int button, t_f *f)
 {
-	double	interpolation;
-	double	range_re;
-	double	range_im;
-	double	center_re;
-	double	center_im;
+	double	old_size_re;
+	double	old_size_im;
+	double	new_size;
 
 	if (button == 4)
-		interpolation = 0.9;
+		f->interpolation = 0.9;
 	else if (button == 5)
-		interpolation = 1.1;
+		f->interpolation = 1.1;
 	else
 		return ;
-	range_re = (f->max_re - f->min_re) * interpolation;
-	range_im = (f->max_im - f->min_im) * interpolation;
-	center_re = (f->max_re + f->min_re) / 2;
-	center_im = (f->max_im + f->min_im) / 2;
-	f->min_re = center_re - range_re / 2;
-    f->max_re = center_re + range_re / 2;
-    f->min_im = center_im - range_im / 2;
-    f->max_im = center_im + range_im / 2;
+	old_size_re = (f->max_re - f->min_re);
+	new_size = (f->interpolation * old_size_re);
+	f->max_re +=(new_size - old_size_re) / 2.0;
+	f->min_re -= (new_size - old_size_re) / 2.0;
+
+	old_size_im = (f->max_im - f->min_im);
+	new_size = (f->interpolation * old_size_im);
+	f->max_im +=(new_size - old_size_im) / 2.0;
+	f->min_im -= (new_size - old_size_im) / 2.0;
+	f->zoom_level *= f->interpolation;
     render_fractal(f);
 }
 

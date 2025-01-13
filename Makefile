@@ -18,7 +18,7 @@ CFLAGS= -Wall -Werror -Wextra -g
 
 LIBX= -lmlx_Linux -L./minilibx-linux -lXext -lX11 -lm ./minilibx-linux/libmlx.a
 
-SRC= main.c mandelbrot.c julia.c aux.c init.c
+SRC= main.c mandelbrot.c julia.c aux.c init.c zoom.c
 
 OBJ= $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/09 08:50:40 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:25:53 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	calculate_mandelbrot(t_f *f, int x, int y)
 	}
 	if (i == f->max_iter)
 		return (0x000000);
-	return ((0x6b104b / f->max_iter) * i);
+	return (((0x6b104b * f->zoom_level) / f->max_iter) * i);
 }
 
 void	color_pixel(t_f *f, int x, int y, int color)
@@ -52,11 +52,12 @@ void	color_pixel(t_f *f, int x, int y, int color)
 	*(int *)(f->img_addr + (y * f->line_len + x * (f->bpp / 8))) = color;
 }
 
-static void	draw_mandelbrot(t_f *f)
+void	draw_mandelbrot(t_f *f)
 {
 	int	x;
 	int	y;
 	int	color;
+	mlx_clear_window(f->mlx, f->win);
 
 	y = 0;
 	while (y < 700)
@@ -64,12 +65,13 @@ static void	draw_mandelbrot(t_f *f)
 		x = 0;
 		while (x < 950)
 		{
-			color = calculate_mandelbrot(f, x, y);
 			color_pixel(f, x, y, color);
+			color = calculate_mandelbrot(f, x, y);
 			x++;
 		}
 		y++;
 	}
+	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 }
 
 void	mandelbrot(t_f *f)
@@ -79,7 +81,7 @@ void	mandelbrot(t_f *f)
 	init_mandelbrot(f);
 	draw_mandelbrot(f);
 	mlx_key_hook(f->win, key_esc, NULL);
-	mlx_mouse_hook(f->win, mouse_hook, f); // mexi aqui 
+	mlx_mouse_hook(f->win, mouse_hook, f);
 	mlx_hook(f->win, 17, 0, close_win, NULL);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 	mlx_loop(f->mlx);

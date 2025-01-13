@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/09 08:13:21 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:24:09 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ typedef struct s_f
 	double		c_im;
 	double		form1;
 	double		form2;
+	int			type;
+	double		interpolation;
+	double		zoom_level;
 }	t_f;
 
 typedef struct s_complex
@@ -59,14 +62,19 @@ int			close_win(void *param);
 /*----- mandelbrot.c -----*/
 void		mandelbrot(t_f *f);
 void		init_mandelbrot(t_f *f);
+void		draw_mandelbrot(t_f *f);
 
 /*----- julia.c -----*/
 void		julia(t_f *f);
 void		num_julia(t_f *f, int number);
 void		init_julia(t_f *f);
+void		julia_set(t_f *f);
 
 /*----- julia and mandelbrot -----*/
 t_complex	map_to_complex_plane(t_f *f, int x, int y);
 void		color_pixel(t_f *f, int x, int y, int color);
+
+/*----- zoom.c -----*/
+int			mouse_hook(int button, int x, int y, t_f *f);
 
 #endif

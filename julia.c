@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/08 15:00:57 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:32:33 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	iterate_julia(t_f *f, t_complex *c, double c_re, double c_im)
 	return (iter);
 }
 
-static void	julia_set(t_f *f)
+void	julia_set(t_f *f)
 {
 	int			x;
 	int			y;
@@ -42,12 +42,13 @@ static void	julia_set(t_f *f)
 		while (x < 950)
 		{
 			complex = map_to_complex_plane(f, x, y);
-			color_pixel(f, x, y, 0xff4a92 * iterate_julia(f, &complex,
+			color_pixel(f, x, y, 0xff4a92 *  f->zoom_level * iterate_julia(f, &complex,
 					f->c_re, f->c_im));
 			x++;
 		}
 		y++;
 	}
+	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 }
 
 void	julia(t_f *f)
@@ -60,6 +61,7 @@ void	julia(t_f *f)
 	num_julia(f, f->max_iter);
 	julia_set(f);
 	mlx_key_hook(f->win, key_esc, NULL);
+	mlx_mouse_hook(f->win, mouse_hook, f);
 	mlx_hook(f->win, 17, 0, close_win, f);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 	mlx_loop(f->mlx);

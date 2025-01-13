@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:09:21 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 11:59:56 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:06:59 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int ac, char **av)
 		num_julia(&f, num);
 		f.type = 0;
 		julia(&f);
-
 	}
 	else
 		user_error();

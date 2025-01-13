@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 13:32:33 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:05:37 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	julia_set(t_f *f)
 		while (x < 950)
 		{
 			complex = map_to_complex_plane(f, x, y);
-			color_pixel(f, x, y, 0xff4a92 *  f->zoom_level * iterate_julia(f, &complex,
-					f->c_re, f->c_im));
+			color_pixel(f, x, y, 0xff4a92 * f->zoom_level * \
+					iterate_julia(f, &complex, f->c_re, f->c_im));
 			x++;
 		}
 		y++;

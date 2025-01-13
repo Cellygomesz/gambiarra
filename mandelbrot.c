@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 13:25:53 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:08:03 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void	draw_mandelbrot(t_f *f)
 	int	x;
 	int	y;
 	int	color;
-	mlx_clear_window(f->mlx, f->win);
 
+	mlx_clear_window(f->mlx, f->win);
 	y = 0;
 	while (y < 700)
 	{

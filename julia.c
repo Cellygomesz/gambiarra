@@ -6,13 +6,13 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 16:05:37 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 10:17:46 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	iterate_julia(t_f *f, t_complex *c, double c_re, double c_im)
+static int	iterate_julia(t_f *f, t_complex *c, double c_re, double c_im)
 {
 	int		iter;
 	double	tmp;

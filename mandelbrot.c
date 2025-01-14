@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 16:08:03 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 10:41:46 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ static int	calculate_mandelbrot(t_f *f, int x, int y)
 	int			i;
 
 	i = 0;
+	cm = map_to_complex_plane(f, x, y);
 	cm.zx = 0.0;
 	cm.zy = 0.0;
-	cm = map_to_complex_plane(f, x, y);
+	temp = 0.0;
 	while ((cm.zx * cm.zx + cm.zy * cm.zy <= 4.0) && (i < f->max_iter))
 	{
 		temp = cm.zx * cm.zx - cm.zy * cm.zy + cm.cx;

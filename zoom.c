@@ -6,13 +6,13 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 08:21:56 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 16:09:43 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 10:17:03 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	render_fractal(t_f *f)
+static void	render_fractal(t_f *f)
 {
 	if (f->type == 1)
 	{
@@ -24,7 +24,7 @@ void	render_fractal(t_f *f)
 	}
 }
 
-void	zoom(int button, t_f *f)
+static void	zoom(int button, t_f *f)
 {
 	double	old_size_re;
 	double	old_size_im;

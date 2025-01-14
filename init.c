@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/14 12:55:08 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:06:20 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	num_julia(t_f *f, int number)
 		f->form1 = 0.4;
 		f->form2 = 0.6;
 	}
- 	else
+	else
 	{
 		f->c_re = 0;
 		f->c_im = 0;

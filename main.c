@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 19:09:21 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 16:06:59 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:36:18 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int ac, char **av)
 		f.type = 1;
 		mandelbrot(&f);
 	}
-	else if (ft_strcmp(av[1], "julia") == 0 && av[2] && is_num(av[2][0]) == 0)
+	else if (ft_strcmp(av[1], "julia") == 0 && av[2] && is_num(av[2][0]) == 0
+	&& !av[2][1])
 	{
 		num = mini_atoi(av[2][0]);
 		num_julia(&f, num);

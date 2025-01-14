@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:23 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/14 11:21:33 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:51:21 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,23 @@ int	mini_atoi(char nptr)
 	return (temp);
 }
 
+static void	free_all(t_f *f)
+{
+	if (f->img)
+		mlx_destroy_image(f->mlx, f->img);
+	if (f->win)
+		mlx_destroy_window(f->mlx, f->win);
+	if (f->mlx)
+	{
+		mlx_destroy_display(f->mlx);
+		free(f->mlx);
+	}
+}
+
 /*function that closes the window on esc*/
 int	key_esc(int num, void *param, t_f *t)
 {
+	(void)param;
 	if (num == 65307)
 	{
 		free_all(t);
@@ -48,17 +62,4 @@ int	close_win(t_f *f)
 	free_all(f);
 	exit(0);
 	return (0);
-}
-
-static void	free_all(t_f *f)
-{
-	if (f->img)
-		mlx_destroy_image(f->mlx, f->img);
-	if (f->win)
-		mlx_destroy_window(f->mlx, f->win);
-	if (f->mlx)
-	{
-		mlx_destroy_display(f->mlx);
-		free(f->mlx);
-	}
 }

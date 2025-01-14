@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:45 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/13 13:24:09 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:50:08 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int			main(int ac, char **av);
 /*----- aux.c -----*/
 int			ft_strcmp(const char *s1, const char *s2);
 int			mini_atoi(char nptr);
-int			key_esc(int num, void *param);
-int			close_win(void *param);
+int			key_esc(int num, void *param, t_f *f);
+int			close_win(t_f *t);
 
 /*----- mandelbrot.c -----*/
 void		mandelbrot(t_f *f);

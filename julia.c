@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/14 10:17:46 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:50 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	julia(t_f *f)
 	if (!f)
 		exit(1);
 	f->mlx = mlx_init();
-	f->win = mlx_new_window(f->mlx, 950, 700, "Julia");
 	init_julia(f);
+	f->win = mlx_new_window(f->mlx, 950, 700, "Julia");
 	num_julia(f, f->max_iter);
 	julia_set(f);
 	mlx_key_hook(f->win, key_esc, NULL);

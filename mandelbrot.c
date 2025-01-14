@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:35 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/14 10:41:46 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:54:16 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void	draw_mandelbrot(t_f *f)
 void	mandelbrot(t_f *f)
 {
 	f->mlx = mlx_init();
-	f->win = mlx_new_window(f->mlx, 950, 700, "Mandelbrot");
 	init_mandelbrot(f);
+	f->win = mlx_new_window(f->mlx, 950, 700, "Mandelbrot");
 	draw_mandelbrot(f);
 	mlx_key_hook(f->win, key_esc, NULL);
 	mlx_mouse_hook(f->win, mouse_hook, f);

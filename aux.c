@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:11:23 by mgomes-s          #+#    #+#             */
-/*   Updated: 2025/01/14 12:12:41 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:37:27 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,8 @@ static void	free_all(t_f *f)
 }
 
 /*function that closes the window on esc*/
-int	key_esc(int num, void *param, t_f *t)
+int	key_esc(int num, t_f *t)
 {
-	(void)param;
 	if (num == 65307)
 	{
 		free_all(t);
